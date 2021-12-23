@@ -15,6 +15,15 @@ hunter_config(
 hunter_config(
     BZip2
     VERSION "1.0.8-p0"
+    CMAKE_ARGS
+        CMAKE_POSITION_INDEPENDENT_CODE=ON
+)
+
+hunter_config(
+    lzma
+    VERSION 5.2.3-p4
+    CMAKE_ARGS
+        CMAKE_POSITION_INDEPENDENT_CODE=ON
 )
 
 hunter_config(
@@ -27,6 +36,7 @@ hunter_config(
         SPDLOG_FMT_EXTERNAL=OFF
         CMAKE_CXX_VISIBILITY_PRESET=hidden
         CMAKE_C_VISIBILITY_PRESET=hidden
+        CMAKE_POSITION_INDEPENDENT_CODE=ON
 )
 
 # libarchive, luxonis fork
@@ -36,6 +46,8 @@ hunter_config(
     URL "https://github.com/luxonis/libarchive/archive/cf2caf0588fc5e2af22cae37027d3ff6902e096f.tar.gz"
     SHA1 "e99477d32ce14292fe652dc5f4f460d3af8fbc93"
     CMAKE_ARGS
+        BUILD_SHARED_LIBS=OFF
+        CMAKE_POSITION_INDEPENDENT_CODE=ON
         ENABLE_ACL=OFF
         ENABLE_BZip2=OFF
         ENABLE_CAT=OFF
