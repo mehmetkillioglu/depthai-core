@@ -38,7 +38,6 @@ function(add_default_flags target)
         add_flag(${target} -Werror=reorder)          # field '$1' will be initialized after field '$2'
         add_flag(${target} -Werror=switch-enum)      # if switch case is missing - error
 
-        add_flag(${target} -fPIC)
     elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
         # using Visual Studio C++
         # TODO(warchant): add flags https://github.com/lefticus/cppbestpractices/blob/master/02-Use_the_Tools_Available.md#msvc
